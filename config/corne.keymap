@@ -38,10 +38,10 @@
 // |      |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &trans  &kp LA(LC(Q))  &kp LA(LC(W)) &kp LA(LC(E)) &kp LA(LC(R)) &kp LA(LC(T))         &kp LA(LC(Y))   &kp LA(LC(U))  &kp LA(LC(I)) &kp LA(LC(O))    &kp LA(LC(P)) &kp LA(LC(MINUS))
+   &lt ADJUST GRAVE  &kp LA(LC(Q))  &kp LA(LC(W)) &kp LA(LC(E)) &kp LA(LC(R)) &kp LA(LC(T))         &kp LA(LC(Y))   &kp LA(LC(U))  &kp LA(LC(I)) &kp LA(LC(O))    &kp LA(LC(P)) &kp LA(LC(MINUS))
    &trans  &kp LA(LC(A))  &kp LA(LC(S)) &kp LA(LC(D)) &kp LA(LC(F)) &kp LA(LC(G))         &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &kp LG(H)        &kp LA(LC(SEMI))
-   &reset  &kp LA(LC(Z))  &kp LA(LC(X)) &kp LA(LC(C)) &kp LA(LC(V)) &kp LA(LC(B))         &kp LA(LC(H))   &kp LA(LC(J))   &kp LA(LC(K)) &kp LA(LC(L))    &kp LA(LC(N)) &trans
-                                                        &kp LGUI   &trans  &kp SPACE      &kp BSPC  &trans   &kp RALT
+   &trans  &kp LA(LC(Z))  &kp LA(LC(X)) &kp LA(LC(C)) &kp LA(LC(V)) &kp LA(LC(B))         &kp LA(LC(H))   &kp LA(LC(J))   &kp LA(LC(K)) &kp LA(LC(L))    &kp LA(LC(N)) &trans
+                                                        &reset   &trans  &kp SPACE      &kp BSPC  &trans   &kp RALT
                         >;
                 };
 
@@ -66,10 +66,10 @@
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &reset       &bootloader       &trans       &trans       &trans         &trans   &trans   &trans &trans    &bootloader &reset
-                          	        &kp LGUI     &trans       &kp SPACE      &kp BSPC  &trans   &kp RALT
+   &kp TAB    &bt BT_CLR       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
+   &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+   &kp LSHFT  &reset       &bootloader  &trans       &trans       &trans         &trans   &trans   &trans &trans    &bootloader &reset
+                          	        &kp LGUI     &trans       &kp SPACE      &kp BSPC &trans   &kp RALT
                         >;
                 };
         };
