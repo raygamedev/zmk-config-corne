@@ -54,7 +54,7 @@
 // |      |     |     |     |     |     |   |  #  |  $  |  ,  |  .  |  ^  |  \   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp TILDE &kp N1  &kp N2 &kp N3   &kp N4 &kp N5       &kp LBKT  &kp EXCL  &kp AT   &kp RBKT &kp AMPS  &kp STAR
+   &kp TILDE &kp N1  &kp N2 &kp N3   &kp N4 &kp N5       &kp LBKT  &kp EXCL  &kp AT      &kp RBKT &kp AMPS  &kp STAR
    &trans     &kp N6  &kp N7 &kp N8   &kp N9 &kp N0       &kp LPAR  &kp EQUAL &kp PLUS &kp RPAR &kp COLON &kp PIPE
    &trans     &trans  &trans &trans   &trans &trans       &kp HASH  &kp DLLR  &trans   &trans   &kp CARET &kp BSLH
                         &trans   &trans   &kp SPACE       &trans   &trans    &trans
