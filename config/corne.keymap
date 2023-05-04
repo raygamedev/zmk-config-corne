@@ -40,7 +40,8 @@
 // |      |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &lt ADJUST GRAVE  &kp LA(Q)  &kp LA(LC(W)) &kp LA(LC(E)) &kp LA(LC(R)) &kp LA(LC(T))         &kp LA(LC(Y))   &kp LA(LC(U))  &kp LA(LC(I)) &kp LA(LC(O))    &kp LA(LC(P)) &kp LA(LC(MINUS))
+
+   &lt ADJUST GRAVE  &kp LA(Q)  &kp LA(LC(W)) &kp LA(E) &kp LA(LC(R)) &kp LA(LC(T))         &kp LA(LC(Y))   &kp LA(LC(U))  &kp LA(LC(I)) &kp LA(LC(O))    &kp LA(LC(P)) &kp LA(LC(MINUS))
    &trans  &kp LA(LC(A))  &kp LA(LC(S)) &kp LA(LC(D)) &kp LA(LC(F)) &kp LA(LC(G))         &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &kp LG(H)        &kp LA(LC(SEMI))
    &trans  &kp LA(LC(Z))  &kp LA(LC(X)) &kp LA(LC(C)) &kp LA(LC(V)) &kp LA(LC(B))         &kp LA(LC(H))   &kp LA(LC(J))   &kp LA(LC(K)) &kp LA(LC(L))    &kp LA(LC(N)) &trans
                                                         &sys_reset   &trans  &kp SPACE      &kp BSPC  &trans   &kp RALT
