@@ -40,11 +40,10 @@
 // |      |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-
-   &lt ADJUST GRAVE  &kp LA(Q)  &kp LA(LC(W)) &kp LA(E) &kp LA(LC(R)) &kp LA(LC(T))         &kp LA(LC(Y))   &kp LA(LC(U))  &kp LA(LC(I)) &kp LA(LC(O))    &kp LA(LC(P)) &kp LA(LC(MINUS))
+   &lt ADJUST GRAVE  &kp LA(LS(Q))  &kp LA(LC(W)) &kp LA(LS(E)) &kp LA(LC(R)) &kp LA(LC(T))         &kp LA(LC(Y))   &kp LA(LC(U))  &kp LA(LC(I)) &kp LA(LC(O))    &kp LA(LC(P)) &kp LA(LC(MINUS))
    &trans  &kp LA(LC(A))  &kp LA(LC(S)) &kp LA(LC(D)) &kp LA(LC(F)) &kp LA(LC(G))         &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &kp LG(H)        &kp LA(LC(SEMI))
    &trans  &kp LA(LC(Z))  &kp LA(LC(X)) &kp LA(LC(C)) &kp LA(LC(V)) &kp LA(LC(B))         &kp LA(LC(H))   &kp LA(LC(J))   &kp LA(LC(K)) &kp LA(LC(L))    &kp LA(LC(N)) &trans
-                                                        &sys_reset   &trans  &kp SPACE      &kp BSPC  &trans   &kp RALT
+                                                        &trans   &trans  &kp SPACE      &kp BSPC  &trans   &kp RALT
                         >;
                 };
 
@@ -62,11 +61,6 @@
                         >;
                 };
                 media_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &kp TAB    &kp F1  &kp F2  &kp F3    &kp F4  &kp F5         &kp C_PREVIOUS   &kp N7   &kp N8 &kp C_NEXT    &kp C_PLAY_PAUSE      &kp BSPC
    &trans     &kp F6  &kp F7  &kp F8    &kp F9  &kp F10        &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans      &trans
