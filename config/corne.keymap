@@ -2,6 +2,7 @@
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
+ * To enter bootloader: LOWER(hold space) ADJUST(hold grave) sys_reset (Z)
  */
 
 #include <behaviors.dtsi>
