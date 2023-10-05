@@ -68,7 +68,7 @@
 
                         bindings = <
    &trans    &kp LA(LS(Q))  &kp LA(LG(W)) &kp LA(LS(E)) &kp LA(LS(R)) &kp LA(LS(T))         &kp C_PREVIOUS   &kp N7   &kp N8 &kp C_NEXT    &kp C_PLAY_PAUSE      &kp BSPC
-   &kp TAB     &kp LA(LS(A))  &kp LA(LS(S)) &kp LA(LS(D)) &kp LA(LS(F)) &kp LA(LS(G))       &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans      &trans
+   &kp TAB     &kp LA(LS(A))  &kp LA(LS(S)) &kp LA(LS(D)) &kp LA(LS(F)) &kp LA(LS(G))       &kp HOME &kp PG_DN &kp PG_UP &kp END &trans      &trans
    &kp LSHFT  &kp LA(LS(Z))  &kp LA(LS(X)) &kp LA(LG(C)) &kp LA(LS(V)) &kp LA(LS(B))        &trans   &trans   &trans &trans    &trans &none
                                            &kp LCTRL     &kp LGUI      &kp SPACE            &kp BSPC &trans  &kp RALT
                         >;
