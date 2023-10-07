@@ -15,6 +15,9 @@
 #define ADJUST 4
 #define FUNC 5
 
+&lt {
+    tapping-term-ms = <200>;
+};
 
 / {
         keymap {
