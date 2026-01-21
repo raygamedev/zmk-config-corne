@@ -13,6 +13,7 @@
 #define RAISE 2
 #define MEDIA 3
 #define ADJUST 4
+#define GAMING 5
 
 
 / {
@@ -41,7 +42,7 @@
 // |      |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &lt ADJUST GRAVE  &kp LA(LC(Q))  &kp LA(LC(W)) &kp LA(LC(E)) &kp LA(LC(R)) &kp LA(LC(T))         &kp LA(LC(Y))   &kp LA(LC(U))  &kp LA(LC(I)) &kp LA(LC(O))    &kp LA(LC(P)) &kp LA(LC(MINUS))
+   &lt ADJUST GRAVE  &kp LA(LC(Q))  &kp LA(LC(W)) &kp LA(LC(E)) &kp LA(LC(R)) &kp LA(LC(T))         &kp LA(LC(Y))   &kp LA(LC(U))  &kp LA(LC(I)) &kp LA(LC(O))    &kp LA(LC(P)) &tog GAMING
    &trans  &kp LA(LC(A))  &kp LA(LC(S)) &kp LA(LC(D)) &kp LA(LC(F)) &kp LA(LC(G))         &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &kp LG(H)        &kp LA(LC(SEMI))
    &trans  &kp LA(LC(Z))  &kp LA(LC(X)) &kp LA(LC(C)) &kp LA(LC(V)) &kp LA(LC(B))         &kp LA(LC(H))   &kp LA(LC(J))   &kp LA(LC(K)) &kp LA(LC(L))    &kp LA(LC(N)) &trans
                                                         &trans   &trans  &kp SPACE      &kp BSPC  &trans   &kp RALT
@@ -81,6 +82,20 @@
    &trans &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans      &trans
    &kp LSHFT  &sys_reset      &bootloader  &trans       &trans       &trans         &trans   &trans   &trans &trans    &bootloader &sys_reset
                           	       &kp LGUI     &trans       &kp SPACE      &kp BSPC &trans   &kp RALT
+                        >;
+                };
+
+                gaming_layer {
+// -----------------------------------------------------------------------------------------
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+                        bindings = <
+   &kp GRAVE &kp Q &kp W &kp E &kp R &kp T        &kp Y &kp U  &kp I     &kp O   &kp P    &tog DEFAULT
+   &kp TAB &kp A &kp S &kp D &kp F &kp G          &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B        &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &mo MEDIA
+         &kp LCTRL &mt LGUI ESC &lt LOWER SPACE   &kp BSPC &lt RAISE RET &kp LALT
                         >;
                 };
         };
