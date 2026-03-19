@@ -49,13 +49,15 @@ while true; do
 
         echo "Done! Firmware flashed to $SIDE half."
         echo ""
-        echo "Waiting for another device... (Ctrl+C to exit)"
+        echo "Waiting for device to disconnect..."
 
         # Wait for device to disconnect
         while mountpoint -q "$MOUNT_POINT"; do
             sleep 0.5
         done
-        echo ""
+
+        echo "Device disconnected. Flash complete!"
+        exit 0
     fi
     sleep 0.5
 done

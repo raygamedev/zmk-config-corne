@@ -8,6 +8,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 #define DEFAULT 0
 #define LOWER 1
 #define RAISE 2
@@ -17,6 +18,85 @@
 
 
 / {
+    macros {
+        // Macro for Host 1 (BT Profile 0)
+        // Sends Ctrl+Alt+Shift+1, THEN switches BT to profile 0
+        to_host_1: to_host_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>; // Small delay to ensure OS registers modifiers
+            tap-ms = <10>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LALT &kp LSHIFT>
+                , <&macro_tap &kp N1>
+                , <&macro_release &kp LCTRL &kp LALT &kp LSHIFT>
+                , <&macro_tap &bt BT_SEL 0>;
+        };
+
+        // Macro for Host 2 (BT Profile 1)
+        // Sends Ctrl+Alt+Shift+2, THEN switches BT to profile 1
+        to_host_2: to_host_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LALT &kp LSHIFT>
+                , <&macro_tap &kp N2>
+                , <&macro_release &kp LCTRL &kp LALT &kp LSHIFT>
+                , <&macro_tap &bt BT_SEL 1>;
+        };
+
+        // Macro for Host 3 (BT Profile 2)
+        // Sends Ctrl+Alt+Shift+3, THEN switches BT to profile 2
+        to_host_3: to_host_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LALT &kp LSHIFT>
+                , <&macro_tap &kp N3>
+                , <&macro_release &kp LCTRL &kp LALT &kp LSHIFT>
+                , <&macro_tap &bt BT_SEL 2>;
+        };
+    };
+    combos {
+        compatible = "zmk,combos";
+
+        // RT keys (4+5) -> Trigger Macro 1
+        combo_rt_bt2 {
+            timeout-ms = <50>;
+            key-positions = <4 5>;
+            bindings = <&to_host_1>;  // Changed from &bt BT_SEL 0
+        };
+
+        // FG keys (16+17) -> Trigger Macro 2
+        combo_fg_bt1 {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&to_host_2>;  // Changed from &bt BT_SEL 1
+        };
+
+        // VB keys (28+29) -> Trigger Macro 3
+        combo_vb_bt3 {
+            timeout-ms = <50>;
+            key-positions = <28 29>;
+            bindings = <&to_host_3>;
+        };
+    };
+
+        behaviors {
+                lt_space: layer_tap_space {
+                        compatible = "zmk,behavior-hold-tap";
+                        #binding-cells = <2>;
+                        flavor = "balanced";
+                        tapping-term-ms = <200>;
+                        quick-tap-ms = <175>;
+                        bindings = <&mo>, <&kp>;
+                };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -30,7 +110,7 @@
    &kp GRAVE &kp Q &kp W &kp E &kp R &kp T        &kp Y &kp U  &kp I     &kp O   &kp P    &kp MINUS
    &kp TAB &kp A &kp S &kp D &kp F &kp G          &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B        &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &mo MEDIA
-         &kp LGUI &mt LCTRL ESC &lt LOWER SPACE   &kp BSPC &lt RAISE RET &kp LALT
+         &kp LGUI &mt LCTRL ESC &lt_space LOWER SPACE   &kp BSPC &lt RAISE RET &kp LALT
                         >;
                 };
 
@@ -42,10 +122,10 @@
 // |      |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &lt ADJUST GRAVE  &kp LG(LC(Q))  &kp UP &kp LG(LC(E)) &kp LG(LC(R)) &kp LG(LC(T))         &kp LA(LC(Y))   &kp LA(LC(U))  &kp LA(LC(I)) &kp LA(LC(O))    &kp LA(LC(P)) &tog GAMING
-   &trans  &kp LEFT  &kp DOWN &kp RIGHT &kp LG(LC(F)) &kp LG(LC(G))         &kp LA(LC(W))        &kp LG(LC(A))        &kp LA(LC(S))        &kp LA(LC(D))        &kp LG(H)        &kp LA(LC(SEMI))
+   &lt ADJUST GRAVE  &kp LG(LC(N1))  &kp LG(LC(N2)) &kp LG(LC(N3)) &kp LG(LC(N4)) &kp LG(LC(N5))         &kp LA(LC(Y))   &kp LA(LC(U))  &kp LA(LC(I)) &kp LA(LC(O))    &kp LA(LC(P)) &tog GAMING
+   &trans  &kp LG(LC(N6))  &kp LG(LC(N7)) &kp LG(LC(D)) &kp LG(LC(F)) &kp LG(LC(G))         &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &kp LG(H)        &kp LA(LC(SEMI))
    &trans  &kp LG(LC(Z))  &kp LG(LC(X)) &kp LG(LC(C)) &kp LG(LC(V)) &kp LG(LC(B))         &kp LA(LC(H))   &kp LA(LC(J))   &kp LA(LC(K)) &kp LA(LC(L))    &kp LA(LC(N)) &trans
-                                                        &trans   &trans  &kp SPACE      &kp BSPC  &trans   &kp RALT
+                                                        &trans   &trans  &kp SPACE      &kp DEL  &trans   &kp RALT
                         >;
                 };
 
@@ -64,9 +144,9 @@
                 };
                 media_layer {
                         bindings = <
-   &trans    &kp LS(N1)  &kp LS(N2) &kp LS(N3) &kp LS(N4) &kp LS(N5)         &kp C_PREVIOUS   &kp N7   &kp N8 &kp C_NEXT    &kp C_PLAY_PAUSE      &kp BSPC
-   &kp TAB     &kp LS(N6)  &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0)       &kp HOME &kp PG_DN &kp PG_UP &kp END &trans      &trans
-   &kp LSHFT  &trans  &trans &trans &trans &trans        &trans   &trans   &trans &trans    &trans &none
+   &trans    &kp F1  &kp F2 &kp F3 &kp F4 &kp F5         &kp C_PREVIOUS   &kp N7   &kp N8 &kp C_NEXT    &kp C_PLAY_PAUSE      &kp BSPC
+   &kp TAB     &kp F6  &kp F7 &kp F8 &kp F9 &kp F10       &kp HOME &kp PG_DN &kp PG_UP &kp END &trans      &trans
+   &kp LSHFT  &kp F11  &kp F12 &trans &trans &trans        &trans   &trans   &trans &trans    &trans &none
                                            &kp LCTRL     &kp LGUI      &kp SPACE            &kp BSPC &trans  &kp RALT
                         >;
                 };
@@ -80,7 +160,7 @@
                         bindings = <
    &kp TAB    &bt BT_CLR  &kp F2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp F12      &kp DEL
    &trans &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans      &trans
-   &kp LSHFT  &sys_reset      &bootloader  &trans       &trans       &trans         &trans   &trans   &trans &trans    &bootloader &sys_reset
+   &kp LSHFT  &sys_reset      &bootloader  &out OUT_BLE &trans       &trans         &trans   &trans   &trans &trans    &bootloader &sys_reset
                           	       &kp LGUI     &trans       &kp SPACE      &kp DEL &trans   &kp RALT
                         >;
                 };
