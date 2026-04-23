@@ -160,7 +160,7 @@
                         bindings = <
    &kp TAB    &bt BT_CLR  &kp F2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp F12      &kp DEL
    &trans &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans      &trans
-   &kp LSHFT  &sys_reset      &bootloader  &out OUT_BLE &trans       &trans         &trans   &trans   &trans &trans    &bootloader &sys_reset
+   &kp LSHFT  &sys_reset      &bootloader  &out OUT_TOG &trans       &trans         &trans   &trans   &trans &trans    &bootloader &sys_reset
                           	       &kp LGUI     &trans       &kp SPACE      &kp DEL &trans   &kp RALT
                         >;
                 };
